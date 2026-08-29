@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kylie DeStefano | Operations & Client Relations Specialist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --border: #334155;
+      --text: #cbd5e1;
+      --text-muted: #94a3b8;
+      --heading: #f8fafc;
+      --accent: #38bdf8;
+      --accent-muted: #0284c7;
+      --tag-bg: rgba(56, 189, 248, 0.08);
+      --tag-border: rgba(56, 189, 248, 0.25);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
+      padding: 3rem 1rem;
+    }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    header {
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 2rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    h1 {
+      color: var(--heading);
+      font-family: 'Merriweather', serif;
+      font-size: 2.4rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.4rem;
+    }
+
+    .title {
+      color: var(--accent);
+      font-size: 1.1rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+
+    .meta-info {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.3rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .meta-info a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .meta-info a:hover {
+      color: var(--accent);
+    }
+
+    section {
+      margin-bottom: 2.5rem;
+    }
+
+    h2 {
+      color: var(--heading);
+      font-family: 'Merriweather', serif;
+      font-size: 1.25rem;
+      font-weight: 400;
+      letter-spacing: 0.03em;
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    h2::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background-color: var(--border);
+    }
+
+    .summary-card {
+      background: var(--card-bg);
+      border-left: 4px solid var(--accent);
+      border-top: 1px solid var(--border);
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      border-radius: 0 6px 6px 0;
+      padding: 1.5rem;
+      font-size: 1rem;
+      color: var(--text);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .job-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1.5rem;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .job-card:hover {
+      border-color: var(--accent-muted);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      padding-bottom: 0.75rem;
+    }
+
+    .job-title {
+      color: var(--heading);
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .company {
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    .job-date {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .bullet-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .bullet-list li {
+      position: relative;
+      padding-left: 1.25rem;
+      font-size: 0.95rem;
+    }
+
+    .bullet-list li::before {
+      content: "▪";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 0.8rem;
+    }
+
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .skill-tag {
+      background-color: var(--tag-bg);
+      color: var(--accent);
+      border: 1px solid var(--tag-border);
+      font-size: 0.85rem;
+      font-weight: 500;
+      padding: 0.4rem 0.9rem;
+      border-radius: 4px;
+    }
+
+    .edu-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1.5rem;
+    }
+
+    .degree {
+      color: var(--heading);
+      font-weight: 600;
+      font-size: 1.05rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .school {
+      color: var(--accent);
+      font-size: 0.95rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .edu-details {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding-top: 2rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 600px) {
+      .header-content { flex-direction: column; align-items: flex-start; }
+      .meta-info { align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <header>
+      <div class="header-content">
+        <div>
+          <h1>Kylie DeStefano</h1>
+          <div class="title">Operations & Client Relations Specialist</div>
+        </div>
+        <div class="meta-info">
+          <div>📞 (843) 263-7479</div>
+          <div>✉️ <a href="mailto:kdestef90@gmail.com">kdestef90@gmail.com</a></div>
+        </div>
+      </div>
+    </header>
+
+    <section>
+      <h2>Executive Summary</h2>
+      <div class="summary-card">
+        Adaptable professional with extensive experience in client-facing roles ranging from property management and residential cleaning to hospitality management[span_1](start_span)[span_1](end_span). Skilled in de-escalating high-pressure situations, managing detailed documentation, and optimizing service delivery timelines[span_2](start_span)[span_2](end_span). Currently leveraging ongoing psychological studies to provide empathetic and effective support for diverse customer populations[span_3](start_span)[span_3](end_span).
+      </div>
+    </section>
+
+    <section>
+      <h2>Professional Experience</h2>
+      <div class="timeline">
+        
+        <div class="job-card">
+          <div class="job-header">
+            <div>
+              <span class="job-title">Leasing Specialist</span> — <span class="company">Jars Property Management</span>
+            </div>
+            <div class="job-date">May 2025 – Dec 2025</div>
+          </div>
+          <ul class="bullet-list">
+            <li>Conducted detailed property inspections to assess condition, identify maintenance needs, and ensure full compliance with local codes and regulations[span_4](start_span)[span_4](end_span).</li>
+            <li>Managed intake, preparation, and oversight across all stages of the leasing and collections processes[span_5](start_span)[span_5](end_span).</li>
+            <li>Supervised property turnovers (including cleaning, repairs, and marketing), successfully reducing vacancy times and increasing overall property value[span_6](start_span)[span_6](end_span).</li>
+            <li>Ensured strict compliance with safety, environmental, and housing standards across multiple residential and commercial properties[span_7](start_span)[span_7](end_span).</li>
+          </ul>
+        </div>
+
+        <div class="job-card">
+          <div class="job-header">
+            <div>
+              <span class="job-title">Owner & Operator</span> — <span class="company">The Wright Stuff</span>
+            </div>
+            <div class="job-date">Nov 2022 – May 2025</div>
+          </div>
+          <ul class="bullet-list">
+            <li>Delivered comprehensive property management and residential cleaning services to a portfolio of 20+ residential clients[span_8](start_span)[span_8](end_span).</li>
+            <li>Managed scheduling, billing, and payment processing, maintaining a 98% on-time payment collection rate[span_9](start_span)[span_9](end_span).</li>
+            <li>Provided exceptional client communication and service, maintaining a 95% client retention rate[span_10](start_span)[span_10](end_span).</li>
+            <li>Represented client properties effectively, ensuring high standards of cleanliness, maintenance, and presentation[span_11](start_span)[span_11](end_span).</li>
+          </ul>
+        </div>
+
+        <div class="job-card">
+          <div class="job-header">
+            <div>
+              <span class="job-title">Server</span> — <span class="company">Locals Raw Bar</span>
+            </div>
+            <div class="job-date">May 2024 – May 2025</div>
+          </div>
+          <ul class="bullet-list">
+            <li>Proactively monitored guest satisfaction, promptly addressing requests, refilling beverages, and resolving concerns in a fast-paced setting[span_12](start_span)[span_12](end_span).</li>
+            <li>Efficiently processed financial transactions, including cash and card payments with high accuracy[span_13](start_span)[span_13](end_span).</li>
+            <li>Communicated effectively with kitchen and bar staff to relay custom orders and special instructions, ensuring accurate and timely service[span_14](start_span)[span_14](end_span).</li>
+          </ul>
+        </div>
+
+        <div class="job-card">
+          <div class="job-header">
+            <div>
+              <span class="job-title">House Cleaner</span> — <span class="company">Merry Maids</span>
+            </div>
+            <div class="job-date">Oct 2018 – Oct 2022</div>
+          </div>
+          <ul class="bullet-list">
+            <li>Delivered high-quality residential cleaning services while adhering to strict company policies and safety standards[span_15](start_span)[span_15](end_span).</li>
+            <li>Managed equipment transportation, inventory tracking, and safe handling of hazardous cleaning solutions[span_16](start_span)[span_16](end_span).</li>
+            <li>Consistently resolved customer issues effectively, maintaining a 90% customer satisfaction rating across a 4-year tenure[span_17](start_span)[span_17](end_span).</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <h2>Core Competencies</h2>
+      <div class="skills-grid">
+        <span class="skill-tag">Client Relations & Retention</span>
+        <span class="skill-tag">Operations Management</span>
+        <span class="skill-tag">AppFolio</span>
+        <span class="skill-tag">Property Care</span>
+        <span class="skill-tag">Conflict De-escalation</span>
+        <span class="skill-tag">Billing & Collections</span>
+        <span class="skill-tag">Google Suite</span>
+        <span class="skill-tag">Office 365</span>
+        <span class="skill-tag">Schedule Optimization</span>
+        <span class="skill-tag">Compliance & Safety Standards</span>
+      </div>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <div class="edu-card">
+        <div class="degree">Bachelor of Science – Psychology</div>
+        <div class="school">Western Governors University</div>
+        <div class="edu-details">
+          <div><strong>Expected Graduation:</strong> May 2028[span_18](start_span)[span_18](end_span)</div>
+          <div>Focusing on data-driven approaches to understanding behavioral patterns and social psychology[span_19](start_span)[span_19](end_span).</div>
+          <div>Developing key capabilities in synthesizing complex behavioral information into clear, actionable insights[span_20](start_span)[span_20](end_span).</div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; Kylie DeStefano · Hosted on GitHub Pages</p>
+    </footer>
+
+  </div>
+
+</body>
+</html>
